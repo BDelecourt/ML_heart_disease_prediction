@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("heart.csv")
 
 #Reading Train Dataset
-print(df.describe())
+df.describe().to_csv("heart_dataset_description.csv")
 
 for column in df.columns:
     plt.figure()  # Create a new figure for each plot
@@ -17,4 +17,4 @@ for column in df.columns:
     plt.grid(True)
     filename = f"data_visualisation_output\{column}_histogram.png"
     plt.savefig(filename, dpi=300, bbox_inches="tight")  # Save with high resolution
-    plt.close()  # Close the figure to free memory
+    plt.close()  # Close the figure to free memory"
